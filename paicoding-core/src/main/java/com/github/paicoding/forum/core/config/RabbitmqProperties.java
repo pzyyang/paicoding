@@ -3,7 +3,7 @@ package com.github.paicoding.forum.core.config;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * RabbitMQ配置文件
@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Setter
 @Getter
 @ConfigurationProperties(prefix = "rabbitmq")
+@Configuration
 public class RabbitmqProperties {
 
     /**
@@ -34,7 +35,7 @@ public class RabbitmqProperties {
     /**
      * 密码
      */
-    private String passport;
+    private String password;
 
     /**
      * 路径

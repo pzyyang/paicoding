@@ -127,7 +127,7 @@ public class DeepSeekIntegration {
     @Data
     @Component
     @ConfigurationProperties(prefix = "deepseek")
-    private class DeepSeekConf {
+    public class DeepSeekConf {
         private String apiKey;
         private String apiHost;
         private Long timeout;

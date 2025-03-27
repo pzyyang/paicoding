@@ -18,8 +18,8 @@ import javax.annotation.Resource;
  * @date 2023/6/9
  */
 @Configuration
-@ConditionalOnProperty(value = "rabbitmq.switchFlag")
 @EnableConfigurationProperties(RabbitmqProperties.class)
+@ConditionalOnProperty(value = "rabbitmq.switchFlag")
 public class RabbitMqAutoConfig implements ApplicationRunner {
     @Resource
     private RabbitmqService rabbitmqService;
@@ -33,7 +33,7 @@ public class RabbitMqAutoConfig implements ApplicationRunner {
         String host = rabbitmqProperties.getHost();
         Integer port = rabbitmqProperties.getPort();
         String userName = rabbitmqProperties.getUsername();
-        String password = rabbitmqProperties.getPassport();
+        String password = rabbitmqProperties.getPassword();
         String virtualhost = rabbitmqProperties.getVirtualhost();
         Integer poolSize = rabbitmqProperties.getPoolSize();
         RabbitmqConnectionPool.initRabbitmqConnectionPool(host, port, userName, password, virtualhost, poolSize);

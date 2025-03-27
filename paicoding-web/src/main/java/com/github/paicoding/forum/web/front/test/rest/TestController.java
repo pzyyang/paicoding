@@ -75,7 +75,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @RestController
 @RequestMapping(path = "test")
 public class TestController {
-    private AtomicInteger cnt = new AtomicInteger(1);
+    private final AtomicInteger cnt = new AtomicInteger(1);
 
     /**
      * 测试邮件发送
@@ -318,7 +318,6 @@ public class TestController {
     /**
      * 返回所有命中的敏感词
      *
-     * @return
      */
     @GetMapping(path = "sensitive/all")
     public Map<String, Integer> showAllHitSensitiveWords() {
@@ -330,7 +329,6 @@ public class TestController {
      * 将敏感词添加到白名单内
      *
      * @param word
-     * @return
      */
     @Permission(role = UserRole.ADMIN)
     @GetMapping(path = "sensitive/addAllowWord")
